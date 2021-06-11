@@ -147,4 +147,9 @@ private void TrackError(int errorCode, string errorMessage) {
 
 For use all of them, please use: USING_ANALYSIS_FIREBASE;USING_ANALYSIS_FACEBOOK;USING_ANALYSIS_APPSFLYER;USING_ANALYSIS_UNITY
 
-Apply Clean Architecture, design Scalable Analytics Tool Supplier.
+---------------------------------------------------------------------------------------------------
+#CleanArchitecture
+#DesignPattern
+#Analytics
+#MobileGames
+#Realbiz Games
