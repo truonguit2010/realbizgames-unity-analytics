@@ -140,8 +140,11 @@ private void TrackError(int errorCode, string errorMessage) {
 ```
 
 # III. Support 3rd-party.
-1. Firebase
-2. Facebook
-3. Appslfyer
+1. Firebase USING_ANALYSIS_FIREBASE
+2. Facebook USING_ANALYSIS_FACEBOOK
+3. Appslfyer USING_ANALYSIS_APPSFLYER
+4. Unity USING_ANALYSIS_UNITY
+
+For use all of them, please use: USING_ANALYSIS_FIREBASE;USING_ANALYSIS_FACEBOOK;USING_ANALYSIS_APPSFLYER;USING_ANALYSIS_UNITY
 
 Apply Clean Architecture, design Scalable Analytics Tool Supplier.
