@@ -139,4 +139,9 @@ private void TrackError(int errorCode, string errorMessage) {
 }
 ```
 
+# III. Support 3rd-party.
+1. Firebase
+2. Facebook
+3. Appslfyer
+
 Apply Clean Architecture, design Scalable Analytics Tool Supplier.
