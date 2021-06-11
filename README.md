@@ -117,6 +117,13 @@ private void levelEnd() {
     RealbizGames.Analysis.AnalysisInstance.Instance.AnalysisService.Level_End(dto);
 }
 ```
+
+```
+private void postScore(string levelName, int score) {
+    RealbizGames.Analysis.PostScoreDTO dto = new RealbizGames.Analysis.PostScoreDTO(levelName: levelName, score: score);
+    RealbizGames.Analysis.AnalysisInstance.Instance.AnalysisService.PostScore(dto);
+}
+```
 ### 2.5 Content Analysis
 ```
 private void selectTheme(string themeNam) {
@@ -125,5 +132,11 @@ private void selectTheme(string themeNam) {
 }
 ```
 ### 2.6 Well-known Exception
+```
+private void TrackError(int errorCode, string errorMessage) {
+    RealbizGames.Analysis.ExceptionAnalysisDTO dto = new RealbizGames.Analysis.ExceptionAnalysisDTO(errorCode, errorMessage);
+    RealbizGames.Analysis.AnalysisInstance.Instance.AnalysisService.TrackException(dto);
+}
+```
 
 Apply Clean Architecture, design Scalable Analytics Tool Supplier.
