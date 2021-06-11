@@ -138,8 +138,17 @@ private void TrackError(int errorCode, string errorMessage) {
     RealbizGames.Analysis.AnalysisInstance.Instance.AnalysisService.TrackException(dto);
 }
 ```
+# III. Set user properties
 
-# III. Support 3rd-party.
+```
+void testAnalysisUserProperty() {
+    RealbizGames.Analysis.AnalysisInstance.Instance.UserProperty.Music = true;//  or false
+    RealbizGames.Analysis.AnalysisInstance.Instance.UserProperty.Sound = true;//  or false
+    RealbizGames.Analysis.AnalysisInstance.Instance.UserProperty.Vibration = true;// or false
+    RealbizGames.Analysis.AnalysisInstance.Instance.UserProperty.ThemeName = "user_selected_theme_name";
+}
+```
+# IV. Support 3rd-party
 1. Firebase USING_ANALYSIS_FIREBASE
 2. Facebook USING_ANALYSIS_FACEBOOK
 3. Appslfyer USING_ANALYSIS_APPSFLYER
