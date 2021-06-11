@@ -1,6 +1,5 @@
-# realbizgames-unity-analytics
-
 # I. Introduction
+
 ## 1. Goals
 1. Centralize Analytics Logic.
 2. Easy to hire developer to develop games, they don't care about 3rd-party Analytics SDKs.
@@ -10,6 +9,8 @@
 ## 2. How does it works?
 1. The Core of the Game use one easy API to record events and user's properties.
 2. The Analysis Core send them (events + properties) to many 3rd-party that is desired.
+
+![Overview Image](Images~/RealBizGames_Analysis.png)
 
 ## 3. How to achieve it?
 - Using [Clean Architure](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
