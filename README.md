@@ -99,6 +99,18 @@ private void tutorialComplete() {
 }
 ```
 ### 2.4 Level Flow Analysis
+We have to functions to implement:
+1. level-start: It has only one required param that is level-name. Some other games can add more with their custom values.
+2. level-end: It has two required params [level-name + time-bound-seconds]
+
+In some games. They are endless game. They only have one level. What is your level-name?
+
+We need to answer the two questions below:
+> How did your user play the level?
+> Do their playing skill improve level by level?
+
+So, to have this param level-name, we just use user-play-level-count to used as level-name. When a user complete/lose the endless level, we increase the counter by 1. After that, use the counter as level-name.
+
 ```
 private void levelStart() {
     _timeBoundSeconds = 0;
@@ -145,7 +157,8 @@ We really want to know "How much does it cost when a user [start, end] an event?
 ***Requirements:***
 1. The time-bound-seconds must only calculate when the user active in the game. So, we need to calculate it in function ***UPdate()***
 
-Here is how it work in case LevelAnalysis.
+Here is how it work in case LevelAnalysis.  
+
 ![Time Bound Explanes](Images~/RealBizGames_Analysis-Tutorial_Analysis.png)
 
 If you have any confuse, please ask me first to implement the time-bound.
