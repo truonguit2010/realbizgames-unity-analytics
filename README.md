@@ -7,7 +7,7 @@
 4. Easy to add more 3rd-party SDK when we need more. Just implement in Reposotory-Layer. => We do not depend on Game Developer.
 
 ## 2. How does it works?
-1. The Core of the Game use one easy API to record events and user's properties.
+1. The Core of the Game use one easy API SET to record events and user's properties.
 2. The Analysis Core send them (events + properties) to many 3rd-party that is desired.
 
 ![Overview Image](Images~/RealBizGames_Analysis.png)
