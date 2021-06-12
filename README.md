@@ -181,7 +181,7 @@ void testAnalysisUserProperty() {
 
 For use all of them, please use: USING_ANALYSIS_FIREBASE;USING_ANALYSIS_FACEBOOK;USING_ANALYSIS_APPSFLYER;USING_ANALYSIS_UNITY
   
-  
+Add AppsFlyer as package, please check https://github.com/AppsFlyerSDK/appsflyer-unity-plugin.git
   
 # Reference
 1. [Clean Architure](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
