@@ -186,6 +186,7 @@ Add AppsFlyer as package, please check https://github.com/AppsFlyerSDK/appsflyer
 # Reference
 1. [Clean Architure](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 2. https://github.com/consulo/consulo-unity3d/issues/191
+3. Pack my own package into tarball: https://docs.npmjs.com/cli/v7/commands/npm-pack
 ---------------------------------------------------------------------------------------------------
 #CleanArchitecture
 #DesignPattern
