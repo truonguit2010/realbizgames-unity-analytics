@@ -7,13 +7,10 @@
 4. Easy to add more 3rd-party SDK when we need more. Just implement in Reposotory-Layer. => We do not depend on Game Developer.
 
 ## 2. How does it works?
-1. The Core of the Game use one easy API to record events and user's properties.
+1. The Core of the Game use one easy API SET to record events and user's properties.
 2. The Analysis Core send them (events + properties) to many 3rd-party that is desired.
 
 ![Overview Image](Images~/RealBizGames_Analysis.png)
-
-## 3. How to achieve it?
-- Using [Clean Architure](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 # II. Analysis
 
@@ -102,6 +99,18 @@ private void tutorialComplete() {
 }
 ```
 ### 2.4 Level Flow Analysis
+We have to functions to implement:
+1. level-start: It has only one required param that is level-name. Some other games can add more with their custom values.
+2. level-end: It has two required params [level-name + time-bound-seconds]
+
+In some games. They are endless game. They only have one level. What is your level-name?
+
+We need to answer the two questions below:
+> How did your user play the level?
+> Do their playing skill improve level by level?
+
+So, to have this param level-name, we just use user-play-level-count to used as level-name. When a user complete/lose the endless level, we increase the counter by 1. After that, use the counter as level-name.
+
 ```
 private void levelStart() {
     _timeBoundSeconds = 0;
@@ -138,6 +147,22 @@ private void TrackError(int errorCode, string errorMessage) {
     RealbizGames.Analysis.AnalysisInstance.Instance.AnalysisService.TrackException(dto);
 }
 ```
+### 2.7 Time Bound (In Seconds)
+We really want to know "How much does it cost when a user [start, end] an event?". 
+- How much time the ***start-game-tutorial*** cost a user?
+- How much time the ***level-1*** cost a user?
+- How much time the ***level-2*** cost a user?
+- etc.
+
+***Requirements:***
+1. The time-bound-seconds must only calculate when the user active in the game. So, we need to calculate it in function ***UPdate()***
+
+Here is how it work in case LevelAnalysis.  
+
+![Time Bound Explanes](Images~/RealBizGames_Analysis-Tutorial_Analysis.png)
+
+If you have any confuse, please ask me first to implement the time-bound.
+
 # III. Set user properties
 
 ```
@@ -155,7 +180,13 @@ void testAnalysisUserProperty() {
 4. Unity USING_ANALYSIS_UNITY
 
 For use all of them, please use: USING_ANALYSIS_FIREBASE;USING_ANALYSIS_FACEBOOK;USING_ANALYSIS_APPSFLYER;USING_ANALYSIS_UNITY
-
+  
+Add AppsFlyer as package, please check https://github.com/AppsFlyerSDK/appsflyer-unity-plugin.git
+  
+# Reference
+1. [Clean Architure](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+2. https://github.com/consulo/consulo-unity3d/issues/191
+3. Pack my own package into tarball: https://docs.npmjs.com/cli/v7/commands/npm-pack
 ---------------------------------------------------------------------------------------------------
 #CleanArchitecture
 #DesignPattern
