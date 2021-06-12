@@ -12,9 +12,6 @@
 
 ![Overview Image](Images~/RealBizGames_Analysis.png)
 
-## 3. How to achieve it?
-- Using [Clean Architure](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-
 # II. Analysis
 
 ## 1. User Behavior Analysis
@@ -138,6 +135,21 @@ private void TrackError(int errorCode, string errorMessage) {
     RealbizGames.Analysis.AnalysisInstance.Instance.AnalysisService.TrackException(dto);
 }
 ```
+### 2.7 Time Bound (In Seconds)
+We really want to know "How much does it cost when a user [start, end] an event?". 
+- How much time the ***start-game-tutorial*** cost a user?
+- How much time the ***level-1*** cost a user?
+- How much time the ***level-2*** cost a user?
+- etc.
+
+***Requirements:***
+1. The time-bound-seconds must only calculate when the user active in the game. So, we need to calculate it in function ***UPdate()***
+
+Here is how it work in case LevelAnalysis.
+![Time Bound Explanes](Images~/RealBizGames_Analysis-Tutorial_Analysis.png)
+
+If you have any confuse, please ask me first to implement the time-bound.
+
 # III. Set user properties
 
 ```
@@ -155,7 +167,11 @@ void testAnalysisUserProperty() {
 4. Unity USING_ANALYSIS_UNITY
 
 For use all of them, please use: USING_ANALYSIS_FIREBASE;USING_ANALYSIS_FACEBOOK;USING_ANALYSIS_APPSFLYER;USING_ANALYSIS_UNITY
-
+  
+  
+  
+# Reference
+1. [Clean Architure](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 ---------------------------------------------------------------------------------------------------
 #CleanArchitecture
 #DesignPattern
